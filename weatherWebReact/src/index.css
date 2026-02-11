@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme{
+  --bg-color: #F2F1F0;
+  --effect-color: #034C8C;
+  --principal-bg-color: #DFEEFF;
+  --border-color: #b8dfff;
+  --secondary-bg-color: #f0f7ff;
+  --font-sans-narrow: "PT Sans Narrow", sans-serif;
+}
