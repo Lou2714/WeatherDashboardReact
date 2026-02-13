@@ -1,11 +1,9 @@
-import Header from "./components/Header/Header";
-import Weather from "./components/Weather/Weather";
+import WeatherWeb from "./pages/WeatherWeb"
 
 function App() {
   return (
     <>
-      <Header />
-      <Weather />
+      <WeatherWeb />
     </>
   )
 }
