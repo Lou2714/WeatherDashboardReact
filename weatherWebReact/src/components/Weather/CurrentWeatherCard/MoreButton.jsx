@@ -8,6 +8,7 @@ export default function MoreButton() {
     const handlerClick = () =>{
         //Cambia de false a true y viceversa
         setShowMenu(!showMenu);
+        fetchWeather();
     }
 
     return(
