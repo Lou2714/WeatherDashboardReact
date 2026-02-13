@@ -10,7 +10,7 @@ export default function SearchBar(){
         <form className="flex flex-row gap-1 items-center rounded-lg bg-congress-blue-100 p-2 w-56 h-10 
                 border-2 border-solid border-congress-blue-100 focus-within:border-congress-blue " 
             onSubmit={handlerSubmit}>
-            <FaSearch  />
+            <FaSearch className="text-lg" />
                 <input type="text"
                     placeholder="Ingrese una ciudad"
                     className="bg-congress-blue-100 w-full focus:outline-none"

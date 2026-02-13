@@ -1,9 +1,11 @@
-import Header from "./components/Header/Header"
+import Header from "./components/Header/Header";
+import Weather from "./components/Weather/Weather";
 
 function App() {
   return (
     <>
       <Header />
+      <Weather />
     </>
   )
 }
