@@ -1,6 +1,6 @@
-import MoreButton from "./MoreButton"
-import WeatherDetailCard from "./WeatherDetailCard"
-import WeatherImage from "../../../assets/sunny.png"
+import MoreButton from "./CurrentWeatherCard/MoreButton"
+import WeatherDetailCard from "./CurrentWeatherCard/WeatherDetailCard"
+import WeatherImage from "../../assets/sunny.png"
 
 export default function CurrentWeatherCard() {
     return(
