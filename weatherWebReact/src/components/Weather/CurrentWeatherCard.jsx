@@ -16,7 +16,7 @@ export default function CurrentWeatherCard() {
                     <h2 className="text-lg">Sensación térmica: 25°C</h2>
                 </div>
             </div>
-            <div className="flex flex-row justify-center items-center gap-0.5 w-full p-2 mt-5">
+            <div className="flex flex-row justify-center items-center gap-2 w-full p-2 mt-5">
                 <WeatherDetailCard />
                 <WeatherDetailCard />
                 <WeatherDetailCard />
