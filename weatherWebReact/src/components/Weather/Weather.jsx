@@ -40,7 +40,6 @@ export default function Weather({ city }) {
         getCurrentWeather(city, "es")
             .then((res) => {
                 setCurrentWeather(res);
-                console.log(res);
             })
             .catch((error) => {
                 setHasCurrentWeatherError(true);
@@ -54,7 +53,6 @@ export default function Weather({ city }) {
         getForecast(city, "es")
             .then((res) => {
                 setForecast(res);
-                console.log(res);
             })
             .catch((error) =>{
                 setHasForecastError(true);
@@ -77,6 +75,7 @@ export default function Weather({ city }) {
                         <ErrorMessage message={currentWeatherErrorMessage} />
                     </div>  
                 ): (<CurrentWeatherCard
+                        icon={currentWeather?.current?.condition?.icon}
                         temperature={currentWeather?.current?.temp_c}
                         condition={currentWeather?.current?.condition?.text} 
                         feelsLike={currentWeather?.current?.feelslike_c}
@@ -92,14 +91,21 @@ export default function Weather({ city }) {
                     </div> 
                 ) : (
                     <div className="flex flex-row justify-center gap-5 mt-5 ">
-                        <ForecastCard />
-                        <ForecastCard />
-                        <ForecastCard />
+                        {
+                            forecast?.forecast?.forecastday?.map((item, index) =>(
+                                <ForecastCard 
+                                    key={index}
+                                    icon={item?.day?.condition?.icon}
+                                    day={getDayFromADate(item.date)}
+                                    maxTem={item?.day?.maxtemp_c}
+                                    minTem={item?.day?.mintemp_c}
+                                />
+                            ))
+                        }
                     </div>
                 )}
                 </div>
             )}
         </>
-        
     )
 }

@@ -5,7 +5,7 @@ import WeatherImage from "../../assets/sunny.png"
 import { LuCloudRainWind, LuWind } from "react-icons/lu";
 import { FiDroplet } from "react-icons/fi";
 
-export default function CurrentWeatherCard({ temperature,condition,feelsLike, humidity, wind, precipitation }) {
+export default function CurrentWeatherCard({ icon,temperature,condition,feelsLike, humidity, wind, precipitation }) {
 
     const weatherDetails = [
         {   
@@ -30,7 +30,7 @@ export default function CurrentWeatherCard({ temperature,condition,feelsLike, hu
             <MoreButton />
             <div className="flex flex-row justify-between gap-5">
                 <div className="flex flex-col items-center">
-                    <img src={WeatherImage} alt="Imagen del clima"/>
+                    <img src={icon} alt="Imagen del clima"/>
                     <h2 className="text-2xl font-semibold">{temperature}°C</h2>
                 </div>
                 <div className="flex flex-col justify-center">
