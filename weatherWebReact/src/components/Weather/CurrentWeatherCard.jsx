@@ -5,7 +5,7 @@ import WeatherImage from "../../assets/sunny.png"
 import { LuCloudRainWind, LuWind } from "react-icons/lu";
 import { FiDroplet } from "react-icons/fi";
 
-export default function CurrentWeatherCard({ icon,temperature,condition,feelsLike, humidity, wind, precipitation }) {
+export default function CurrentWeatherCard({ icon,temperature,condition,feelsLike, humidity, wind, precipitation, onUnitTemperatureChange }) {
 
     const weatherDetails = [
         {   
@@ -27,7 +27,7 @@ export default function CurrentWeatherCard({ icon,temperature,condition,feelsLik
     
     return(
         <div className="relative flex flex-col items-center m-auto w-80 bg-congress-blue-100 rounded-lg">   
-            <MoreButton />
+            <MoreButton onUnitTemperatureChange={onUnitTemperatureChange}/>
             <div className="flex flex-row justify-between gap-5">
                 <div className="flex flex-col items-center">
                     <img src={icon} alt="Imagen del clima"/>

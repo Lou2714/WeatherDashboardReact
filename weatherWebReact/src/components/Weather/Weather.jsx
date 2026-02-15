@@ -5,6 +5,7 @@ import ErrorMessage from "../Feedback/ErrorMessage";
 import Spinner from "../Feedback/Spinner";
 
 import { getCurrentDate, getDayFromADate } from "../../utils/dateUtils";
+import { saveTemperatureUnitChecked, getTemperatureUnit } from "../../utils/storage";
 import { getCurrentWeather, getForecast } from "../../services/weatherService";
 
 import { useState, useEffect } from "react";
@@ -18,22 +19,26 @@ export default function Weather({ city }) {
     const [isLoading, setIsLoading] = useState(false);
     const [currentWeather, setCurrentWeather] = useState(null);
     const [forecast, setForecast] = useState(null);
-
-    //const [searchedCity, setSearchedCity] = useState(city)
-
-    //console.log(city);//Se muestra el valor
+    //saveTemperatureUnitChecked("celsius");
+    //El valor por defecto será celsius o el valor del local
+    const [temperatureUnit, setTemperatureUnit] = useState("");
+    
+    
     const currentDate = getCurrentDate();
 
     useEffect(() => {
         setIsLoading(true);
-        //setSearchedCity(city);
         statesReset();
-
+        //Verifica si existe una unidad de temperatura guardada en localStorage
+        checkTemperatureUnits();
         getCurrentWeatherInformation();
         getForecastInformation();
-        console.log(city);
+        setTemperatureUnit(getTemperatureUnit());
+        //saveTemperatureUnitChecked(temperatureUnit);
+        //console.log(temperatureUnit);
         
-    },[city]);
+    },[city, temperatureUnit]);
+
 
     const getCurrentWeatherInformation = () =>{
         //Pendiente de ver donde establezco esto
@@ -70,6 +75,13 @@ export default function Weather({ city }) {
         setForecastErrorMessage("");
     }
     
+    const checkTemperatureUnits = () =>{
+        //Si resulta que no hay una unidad de temperatura guardada almacena un valor por defecto
+        if (getTemperatureUnit() == null) {
+            saveTemperatureUnitChecked("celsius");
+        }
+    }
+
     return(
         <>
             {isLoading ? (<Spinner />) : (
@@ -92,6 +104,7 @@ export default function Weather({ city }) {
                         humidity={currentWeather?.current?.humidity}
                         wind={currentWeather?.current?.wind_kph}
                         precipitation={currentWeather?.current?.precip_mm}
+                        onUnitTemperatureChange={setTemperatureUnit}
                     />)}
                 <h2 className="text-xl text-center my-2 font-semibold">Pronóstico</h2>
                 {hasForecastError ? (

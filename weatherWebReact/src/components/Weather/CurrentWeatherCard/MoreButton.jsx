@@ -2,7 +2,7 @@ import { MdMoreHoriz } from "react-icons/md";
 import TemperatureUnitsMenu from "./TemperatureUnitsMenu";
 import { useState } from "react";
 
-export default function MoreButton() {
+export default function MoreButton({ onUnitTemperatureChange }) {
     const [showMenu, setShowMenu] = useState(false);
 
     const handlerClick = () =>{
@@ -18,7 +18,7 @@ export default function MoreButton() {
             <MdMoreHoriz className="text-3xl active:text-congress-blue active:border active:border-congress-blue active:rounded-lg 
             hover:border hover:border-congress-blue hover:rounded-lg hover:text-congress-blue"/>
         </button>
-        {showMenu && <TemperatureUnitsMenu />}
+        {showMenu && <TemperatureUnitsMenu onTemperatureUnitChange={onUnitTemperatureChange} />}
         </>
     )
 }
