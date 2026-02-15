@@ -7,7 +7,7 @@ export const getCurrentWeather = (location, language) => {
     }).then((res) =>{
         if (res.error) {
             if (res.error.code === 1006) {
-                throw new Error(`La ubicación ${location} no se encontró`);
+                throw new Error(`La ciudad ${location} no se encontró`);
             }else{
                 throw new Error("No se pudo obtener los datos del clima");
             }
