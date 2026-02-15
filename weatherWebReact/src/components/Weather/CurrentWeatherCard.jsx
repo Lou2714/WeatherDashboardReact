@@ -24,7 +24,7 @@ export default function CurrentWeatherCard({ icon,temperature,condition,feelsLik
             icon: <LuCloudRainWind className="text-2xl" />
         }
     ]
-
+    
     return(
         <div className="relative flex flex-col items-center m-auto w-80 bg-congress-blue-100 rounded-lg">   
             <MoreButton />

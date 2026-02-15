@@ -1,19 +1,19 @@
 import { FaSearch } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
-export default function SearchBar({ initialCityValue,onSearchCity }){
+export default function SearchBar({ onSearchCity }){
     const [city, setCity] = useState("");
-//Revisar esto del initial value
-    useEffect(() => {
-        onSearchCity(initialCityValue);
-    }, [initialCityValue]);
 
     const handlerSubmit = (e) =>{
         e.preventDefault();
-        //Es un callback para obtener la ciudad en el componente padre, que es header y así pasar el valor al otro componente
-        onSearchCity(city);
-        setCity("");
+        //Verifica que el valor no sea vacío, si no hay valor no se envia nada
+        if (city.trim()) {
+            //Es un callback para obtener la ciudad en el componente padre, que es header y así pasar el valor al otro componente
+            onSearchCity(city);
+            setCity("");
+        }
+        
     }
 
     return(

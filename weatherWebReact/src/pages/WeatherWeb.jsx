@@ -3,8 +3,8 @@ import Weather from "../components/Weather/Weather";
 import { useState } from "react";
 
 export default function WeatherWeb() {
-
-    const [searchedCity, setSearchedCity] = useState("");
+    //Aqui establezco el valor por defecto para que se muestre su información al cargar la página por primera vez
+    const [searchedCity, setSearchedCity] = useState("San Salvador");
 
     // const handlerSearchedCity = (city) =>{
     //     setSearchedCity(city);

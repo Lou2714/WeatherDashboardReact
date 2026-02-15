@@ -19,19 +19,19 @@ export default function Weather({ city }) {
     const [currentWeather, setCurrentWeather] = useState(null);
     const [forecast, setForecast] = useState(null);
 
+    //const [searchedCity, setSearchedCity] = useState(city)
+
     //console.log(city);//Se muestra el valor
     const currentDate = getCurrentDate();
 
     useEffect(() => {
-        //Reseteo de estados
-        setHasCurrentWeatherError(false);
-        setCurrentWeatherErrorMessage("");
-        setHasForecastError(false);
-        setForecastErrorMessage("");
         setIsLoading(true);
+        //setSearchedCity(city);
+        statesReset();
 
         getCurrentWeatherInformation();
         getForecastInformation();
+        console.log(city);
         
     },[city]);
 
@@ -40,6 +40,7 @@ export default function Weather({ city }) {
         getCurrentWeather(city, "es")
             .then((res) => {
                 setCurrentWeather(res);
+                statesReset();
             })
             .catch((error) => {
                 setHasCurrentWeatherError(true);
@@ -53,11 +54,20 @@ export default function Weather({ city }) {
         getForecast(city, "es")
             .then((res) => {
                 setForecast(res);
+                statesReset();
             })
             .catch((error) =>{
                 setHasForecastError(true);
                 setForecastErrorMessage(error.message);
             })
+    }
+
+    const statesReset = () =>{
+        //Reseteo de estados
+        setHasCurrentWeatherError(false);
+        setCurrentWeatherErrorMessage("");
+        setHasForecastError(false);
+        setForecastErrorMessage("");
     }
     
     return(
@@ -82,7 +92,6 @@ export default function Weather({ city }) {
                         humidity={currentWeather?.current?.humidity}
                         wind={currentWeather?.current?.wind_kph}
                         precipitation={currentWeather?.current?.precip_mm}
-                        
                     />)}
                 <h2 className="text-xl text-center my-2 font-semibold">Pronóstico</h2>
                 {hasForecastError ? (
