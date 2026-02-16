@@ -99,11 +99,15 @@ export default function Weather({ city }) {
                 ): (<CurrentWeatherCard
                         icon={currentWeather?.current?.condition?.icon}
                         temperature={currentWeather?.current?.temp_c}
+                        temperature_f={currentWeather?.current?.temp_f}
                         condition={currentWeather?.current?.condition?.text} 
                         feelsLike={currentWeather?.current?.feelslike_c}
+                        feelsLike_f={currentWeather?.current?.feelslike_f}
                         humidity={currentWeather?.current?.humidity}
                         wind={currentWeather?.current?.wind_kph}
+                        wind_mph={currentWeather?.current?.wind_mph}
                         precipitation={currentWeather?.current?.precip_mm}
+                        precipitation_in={currentWeather?.current?.precip_in}
                         onUnitTemperatureChange={setTemperatureUnit}
                     />)}
                 <h2 className="text-xl text-center my-2 font-semibold">Pronóstico</h2>
@@ -120,7 +124,9 @@ export default function Weather({ city }) {
                                     icon={item?.day?.condition?.icon}
                                     day={getDayFromADate(item.date)}
                                     maxTem={item?.day?.maxtemp_c}
+                                    maxTem_f={item?.day?.maxtemp_f}
                                     minTem={item?.day?.mintemp_c}
+                                    minTem_f={item?.day?.mintemp_f}
                                 />
                             ))
                         }

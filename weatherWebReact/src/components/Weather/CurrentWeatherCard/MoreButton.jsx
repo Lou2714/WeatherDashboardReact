@@ -12,7 +12,7 @@ export default function MoreButton({ onUnitTemperatureChange }) {
 
     return(
         <>
-        <button className="flex justify-center cursor-pointer relative left-28 top-2 bg-congress-blue-100 rounded-md px-1
+        <button className="flex justify-center cursor-pointer relative left-32 top-2 bg-congress-blue-100 rounded-md px-1
                     transition-all transition-discrete delay-150"
                 onClick={handlerClick}>
             <MdMoreHoriz className="text-3xl active:text-congress-blue active:border active:border-congress-blue active:rounded-lg 
