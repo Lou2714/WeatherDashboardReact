@@ -17,7 +17,7 @@ export default function SearchBar({ onSearchCity }){
     }
 
     return(
-        <form className="flex flex-row gap-1 items-center rounded-lg bg-congress-blue-100 p-2 w-56 h-10 
+        <form className="flex flex-row gap-1 items-center rounded-lg bg-congress-blue-100 p-2 w-56 md:w-4/6 lg:w-2/6  h-10 
                 border-2 border-solid border-congress-blue-100 focus-within:border-congress-blue dark:bg-river-bed-300 dark:focus-within:border-river-bed-600" 
             onSubmit={handlerSubmit}>
             <FaSearch className="text-lg" />

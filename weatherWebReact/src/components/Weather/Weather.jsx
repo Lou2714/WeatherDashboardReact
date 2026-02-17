@@ -116,7 +116,7 @@ export default function Weather({ city }) {
                         <ErrorMessage message={forecastErrorMessage} />
                     </div> 
                 ) : (
-                    <div className="flex flex-row justify-center gap-5 mt-5 ">
+                    <div className="flex flex-row justify-center gap-5 mt-5 md:pb-5 ">
                         {
                             forecast?.forecast?.forecastday?.map((item, index) =>(
                                 <ForecastCard 

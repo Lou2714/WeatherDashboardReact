@@ -56,11 +56,11 @@ export default function CurrentWeatherCard({
     }
 
     return(
-        <div className="relative flex flex-col items-center m-auto w-86 px-2 bg-congress-blue-100 dark:bg-river-bed-300 rounded-lg">   
+        <div className="relative flex flex-col items-center m-auto w-86 md:w-96 px-2 bg-congress-blue-100 dark:bg-river-bed-300 rounded-lg">   
             <MoreButton onUnitTemperatureChange={onUnitTemperatureChange}/>
-            <div className="flex flex-row justify-between gap-5">
+            <div className="flex flex-row justify-between gap-5 md:gap-10">
                 <div className="flex flex-col items-center">
-                    <img src={icon} alt="Imagen del clima"/>
+                    <img src={icon} alt="Imagen del clima" className="md:w-24"/>
                     <h2 className="text-2xl font-semibold">
                         {isCelsius ? (`${temperature}°C`) : (`${temperature_f}°F`)}
                     </h2>
@@ -72,7 +72,7 @@ export default function CurrentWeatherCard({
                     </h2>
                 </div>
             </div>
-            <div className="flex flex-row justify-center items-center gap-1 w-full pb-2 mt-5">
+            <div className="flex flex-row justify-center items-center gap-1 md:justify-around w-full pb-2 mt-5">
                 {weatherDetails.map((item,index) =>
                         (
                             <WeatherDetailCard 
