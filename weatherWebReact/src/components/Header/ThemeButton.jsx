@@ -1,7 +1,4 @@
 import { LuSunMedium, LuMoon } from "react-icons/lu";
-import { saveThemePreference, getThemePreference } from "../../utils/storage";
-
-import { useState } from "react";
 
 export default function ThemeButton({ onToggleChange, darkMode }) {
 
@@ -19,12 +16,18 @@ export default function ThemeButton({ onToggleChange, darkMode }) {
                         before:absolute before:flex before:items-center before:justify-center
                         before:w-6 before:h-6 before:left-1 before:bottom-1 before:bg-congress-blue before:transition-all before:transition-discrete before:delay-150 
                         before:rounded-full peer-checked:bg-river-bed-300 peer-checked:before:translate-x-8 peer-checked:before:bg-river-bed-600">
-                    {/*<LuSunMedium className="text-xl text-congress-blue-50"/> Este por alguna razon no se ve, sospercho que se maneja con estado */}
-                    {/* Este elemento tendría que ser condicional, reemplazar el sol al dar click en el botón <LuMoon /> */}
-                    {/* <span className="absolute inset-0 flex items-center justify-between px-1.5">
-                        <LuSunMedium className="w-4 h-4 text-congress-blue-50" />
-                        <LuMoon className="w-4 h-4 text-[#1F2226]" />
-                    </span> */}
+                
+                {darkMode ? (
+                    <span className={`absolute inset-0 flex items-center justify-between px-1.5
+                        transition-all duration-300
+                        ${darkMode ? "translate-x-8" : ""}`}>
+                            <LuMoon className="text-river-bed-100 text-lg" />
+                    </span>
+                    ) : (
+                    <span className="absolute inset-0 flex items-center justify-between px-1.5">
+                        <LuSunMedium className="text-white text-lg " />
+                    </span>
+                    )}
                 </span>
             </label>
             
