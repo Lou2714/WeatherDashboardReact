@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-seashell-white: #F2F1F0;
   --color-congress-blue: #034C8C;
