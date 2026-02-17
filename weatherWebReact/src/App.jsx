@@ -29,9 +29,9 @@ function App() {
   }
 
   return (
-    <>
+    <div className="bg-white min-h-screen dark:bg-river-bed-900 transition-colors delay-150 ease-in-out ">
       <WeatherWeb onToggleChange={handlerToggleChange} darkMode={darkTheme}/>
-    </>
+    </div>
   )
 }
 

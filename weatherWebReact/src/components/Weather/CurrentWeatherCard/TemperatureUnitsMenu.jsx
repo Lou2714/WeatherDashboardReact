@@ -16,7 +16,7 @@ export default function TemperatureUnitsMenu({ onTemperatureUnitChange }) {
     
 
         return(
-        <div className="absolute top-8 right-12 p-3 bg-congress-blue-50 border rounded-md border-congress-blue-200">
+        <div className="absolute top-8 right-12 p-3 bg-congress-blue-50 dark:bg-river-bed-100 border rounded-md border-congress-blue-200 dark:border-river-bed-400">
             <p>Unidades de temperatura</p>
             <div className="flex flex-row items-center gap-2">
                 <input type="radio" name="temperatureUnit" id="celsius" value="celsius"

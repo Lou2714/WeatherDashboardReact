@@ -7,7 +7,14 @@
   --color-seashell-white: #F2F1F0;
   --color-congress-blue: #034C8C;
   --color-congress-blue-50: #f0f7ff;
-  --color-congress-blue-100: #DFEEFF;
+  --color-congress-blue-100: #dfeeff; /*#bddeff*/
   --color-congress-blue-200: #b8dfff;
   --font-sans-narrow: "PT Sans Narrow", sans-serif;
+
+  --color-river-bed-900:#131925;
+  --color-river-bed-600:#474f59;
+  --color-river-bed-300:#d2d5da;
+  --color-river-bed-400:#9ea3ad;
+  --color-river-bed-100:#f3f4f6;
+
 }

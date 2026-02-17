@@ -110,7 +110,7 @@ export default function Weather({ city }) {
                         precipitation_in={currentWeather?.current?.precip_in}
                         onUnitTemperatureChange={setTemperatureUnit}
                     />)}
-                <h2 className="text-xl text-center my-2 font-semibold">Pronóstico</h2>
+                <h2 className="text-xl text-center my-2 font-semibold dark:text-seashell-white">Pronóstico</h2>
                 {hasForecastError ? (
                     <div className="relative flex flex-col items-center m-auto w-80 h-28">
                         <ErrorMessage message={forecastErrorMessage} />

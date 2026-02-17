@@ -56,7 +56,7 @@ export default function CurrentWeatherCard({
     }
 
     return(
-        <div className="relative flex flex-col items-center m-auto w-86 px-2 bg-congress-blue-100 rounded-lg">   
+        <div className="relative flex flex-col items-center m-auto w-86 px-2 bg-congress-blue-100 dark:bg-river-bed-300 rounded-lg">   
             <MoreButton onUnitTemperatureChange={onUnitTemperatureChange}/>
             <div className="flex flex-row justify-between gap-5">
                 <div className="flex flex-col items-center">
