@@ -19,7 +19,7 @@ export const getCurrentWeather = (location, language) => {
 
 export const getForecast = (location, language) =>{
     const days = 4; //Fijo porque la versión gratuita solo muestra 3 días
-    const request = fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=${days}&lang=${language}`);
+    const request = fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=${days}&lang=${language}`);
     const response = request.then((res) =>{
         return res.json();
     }).then((res) =>{
